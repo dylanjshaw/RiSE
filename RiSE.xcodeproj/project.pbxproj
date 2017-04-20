@@ -11,13 +11,11 @@
 		0F78DE621E81B68D00AF9BE0 /* StandardAlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78DE611E81B68D00AF9BE0 /* StandardAlarmController.swift */; };
 		0F78DE641E81DC2900AF9BE0 /* SelectTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78DE631E81DC2900AF9BE0 /* SelectTypeController.swift */; };
 		0FC6463A1E7EFCC500FB2F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC646391E7EFCC500FB2F05 /* LaunchScreen.storyboard */; };
+		0FDF8A131E9D59F700122491 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF8A121E9D59F700122491 /* fontawesome-webfont.ttf */; };
 		54B3513F1E7DFA83009C366A /* IndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B3513E1E7DFA83009C366A /* IndexTableViewController.swift */; };
 		54B351431E7DFD61009C366A /* CustomIndexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B351421E7DFD61009C366A /* CustomIndexCell.swift */; };
-		54B351451E7E0F45009C366A /* editAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B351441E7E0F45009C366A /* editAlarmViewController.swift */; };
 		54B351491E7E1F6E009C366A /* ObligationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B351481E7E1F6E009C366A /* ObligationTableViewController.swift */; };
-		54B3514D1E7E2432009C366A /* CustomRouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B3514C1E7E2432009C366A /* CustomRouteCell.swift */; };
 		54B351511E7F082A009C366A /* createAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B351501E7F082A009C366A /* createAlarmViewController.swift */; };
-		54B351531E7F180C009C366A /* editObligationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B351521E7F180C009C366A /* editObligationViewController.swift */; };
 		B25549E31E7F1D3C00265A2C /* CreateObligationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25549E21E7F1D3C00265A2C /* CreateObligationViewController.swift */; };
 		E916043B1E7CA66F00EC7002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916043A1E7CA66F00EC7002 /* AppDelegate.swift */; };
 		E91604401E7CA66F00EC7002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E916043E1E7CA66F00EC7002 /* Main.storyboard */; };
@@ -29,17 +27,15 @@
 		0F78DE5F1E81B3F500AF9BE0 /* HapticTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticTestController.swift; sourceTree = "<group>"; };
 		0F78DE611E81B68D00AF9BE0 /* StandardAlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardAlarmController.swift; sourceTree = "<group>"; };
 		0F78DE631E81DC2900AF9BE0 /* SelectTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTypeController.swift; sourceTree = "<group>"; };
-		0F9E1EA21E824ABD00CF6E7D /* CANDY.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = CANDY.TTF; path = ../../../../../../Desktop/CANDY.TTF; sourceTree = "<group>"; };
 		0FC646391E7EFCC500FB2F05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FDF8A111E9C309200122491 /* 080_space-music-arpeggios.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = "080_space-music-arpeggios.aif"; path = "../../080_space-music-arpeggios.aif"; sourceTree = "<group>"; };
+		0FDF8A121E9D59F700122491 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "../../../Downloads/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		54B3513E1E7DFA83009C366A /* IndexTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableViewController.swift; sourceTree = "<group>"; };
 		54B351421E7DFD61009C366A /* CustomIndexCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIndexCell.swift; sourceTree = "<group>"; };
-		54B351441E7E0F45009C366A /* editAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editAlarmViewController.swift; sourceTree = "<group>"; };
 		54B351481E7E1F6E009C366A /* ObligationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObligationTableViewController.swift; sourceTree = "<group>"; };
-		54B3514C1E7E2432009C366A /* CustomRouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRouteCell.swift; sourceTree = "<group>"; };
 		54B351501E7F082A009C366A /* createAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createAlarmViewController.swift; sourceTree = "<group>"; };
-		54B351521E7F180C009C366A /* editObligationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editObligationViewController.swift; sourceTree = "<group>"; };
 		B25549E21E7F1D3C00265A2C /* CreateObligationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateObligationViewController.swift; sourceTree = "<group>"; };
-		E91604371E7CA66F00EC7002 /* Wakeupz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wakeupz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91604371E7CA66F00EC7002 /* RiSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiSE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E916043A1E7CA66F00EC7002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E916043F1E7CA66F00EC7002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E91604421E7CA66F00EC7002 /* Wakeupz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wakeupz.xcdatamodel; sourceTree = "<group>"; };
@@ -58,18 +54,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F9E1EA11E824A8200CF6E7D /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				0F9E1EA21E824ABD00CF6E7D /* CANDY.TTF */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
 		E916042E1E7CA66F00EC7002 = {
 			isa = PBXGroup;
 			children = (
-				E91604391E7CA66F00EC7002 /* Wakeupz */,
+				E91604391E7CA66F00EC7002 /* RiSE */,
 				E91604381E7CA66F00EC7002 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,42 +65,41 @@
 		E91604381E7CA66F00EC7002 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E91604371E7CA66F00EC7002 /* Wakeupz.app */,
+				E91604371E7CA66F00EC7002 /* RiSE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E91604391E7CA66F00EC7002 /* Wakeupz */ = {
+		E91604391E7CA66F00EC7002 /* RiSE */ = {
 			isa = PBXGroup;
 			children = (
+				0FDF8A111E9C309200122491 /* 080_space-music-arpeggios.aif */,
+				E91604411E7CA66F00EC7002 /* Wakeupz.xcdatamodeld */,
+				E91604491E7CA66F00EC7002 /* Info.plist */,
+				E91604441E7CA66F00EC7002 /* Assets.xcassets */,
 				E916043A1E7CA66F00EC7002 /* AppDelegate.swift */,
-				0F9E1EA11E824A8200CF6E7D /* Fonts */,
 				0FC646391E7EFCC500FB2F05 /* LaunchScreen.storyboard */,
 				E916043E1E7CA66F00EC7002 /* Main.storyboard */,
+				0FDF8A121E9D59F700122491 /* fontawesome-webfont.ttf */,
 				0F78DE611E81B68D00AF9BE0 /* StandardAlarmController.swift */,
 				0F78DE5F1E81B3F500AF9BE0 /* HapticTestController.swift */,
-				E91604441E7CA66F00EC7002 /* Assets.xcassets */,
-				E91604491E7CA66F00EC7002 /* Info.plist */,
-				E91604411E7CA66F00EC7002 /* Wakeupz.xcdatamodeld */,
 				54B3513E1E7DFA83009C366A /* IndexTableViewController.swift */,
 				54B351421E7DFD61009C366A /* CustomIndexCell.swift */,
-				54B351441E7E0F45009C366A /* editAlarmViewController.swift */,
 				54B351481E7E1F6E009C366A /* ObligationTableViewController.swift */,
-				54B3514C1E7E2432009C366A /* CustomRouteCell.swift */,
 				54B351501E7F082A009C366A /* createAlarmViewController.swift */,
 				0F78DE631E81DC2900AF9BE0 /* SelectTypeController.swift */,
-				54B351521E7F180C009C366A /* editObligationViewController.swift */,
 				B25549E21E7F1D3C00265A2C /* CreateObligationViewController.swift */,
 			);
+			name = RiSE;
 			path = Wakeupz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E91604361E7CA66F00EC7002 /* Wakeupz */ = {
+		E91604361E7CA66F00EC7002 /* RiSE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E916044C1E7CA66F00EC7002 /* Build configuration list for PBXNativeTarget "Wakeupz" */;
+			buildConfigurationList = E916044C1E7CA66F00EC7002 /* Build configuration list for PBXNativeTarget "RiSE" */;
 			buildPhases = (
 				E91604331E7CA66F00EC7002 /* Sources */,
 				E91604341E7CA66F00EC7002 /* Frameworks */,
@@ -122,9 +109,9 @@
 			);
 			dependencies = (
 			);
-			name = Wakeupz;
+			name = RiSE;
 			productName = Wakeupz;
-			productReference = E91604371E7CA66F00EC7002 /* Wakeupz.app */;
+			productReference = E91604371E7CA66F00EC7002 /* RiSE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -139,12 +126,17 @@
 				TargetAttributes = {
 					E91604361E7CA66F00EC7002 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WPA2DJBB48;
+						DevelopmentTeam = 4JC5WJ423J;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = E91604321E7CA66F00EC7002 /* Build configuration list for PBXProject "Wakeupz" */;
+			buildConfigurationList = E91604321E7CA66F00EC7002 /* Build configuration list for PBXProject "RiSE" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -157,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E91604361E7CA66F00EC7002 /* Wakeupz */,
+				E91604361E7CA66F00EC7002 /* RiSE */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC6463A1E7EFCC500FB2F05 /* LaunchScreen.storyboard in Resources */,
+				0FDF8A131E9D59F700122491 /* fontawesome-webfont.ttf in Resources */,
 				E91604451E7CA66F00EC7002 /* Assets.xcassets in Resources */,
 				E91604401E7CA66F00EC7002 /* Main.storyboard in Resources */,
 			);
@@ -187,9 +180,6 @@
 				54B351431E7DFD61009C366A /* CustomIndexCell.swift in Sources */,
 				54B351511E7F082A009C366A /* createAlarmViewController.swift in Sources */,
 				E91604431E7CA66F00EC7002 /* Wakeupz.xcdatamodeld in Sources */,
-				54B351451E7E0F45009C366A /* editAlarmViewController.swift in Sources */,
-				54B351531E7F180C009C366A /* editObligationViewController.swift in Sources */,
-				54B3514D1E7E2432009C366A /* CustomRouteCell.swift in Sources */,
 				E916043B1E7CA66F00EC7002 /* AppDelegate.swift in Sources */,
 				0F78DE621E81B68D00AF9BE0 /* StandardAlarmController.swift in Sources */,
 				54B351491E7E1F6E009C366A /* ObligationTableViewController.swift in Sources */,
@@ -308,12 +298,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WPA2DJBB48;
+				DEVELOPMENT_TEAM = 4JC5WJ423J;
 				INFOPLIST_FILE = Wakeupz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.f4.Wakeupz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.f4.Wakeupz.dylan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,19 +313,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WPA2DJBB48;
+				DEVELOPMENT_TEAM = 4JC5WJ423J;
 				INFOPLIST_FILE = Wakeupz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.f4.Wakeupz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.f4.Wakeupz.dylan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E91604321E7CA66F00EC7002 /* Build configuration list for PBXProject "Wakeupz" */ = {
+		E91604321E7CA66F00EC7002 /* Build configuration list for PBXProject "RiSE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E916044A1E7CA66F00EC7002 /* Debug */,
@@ -343,7 +335,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E916044C1E7CA66F00EC7002 /* Build configuration list for PBXNativeTarget "Wakeupz" */ = {
+		E916044C1E7CA66F00EC7002 /* Build configuration list for PBXNativeTarget "RiSE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E916044D1E7CA66F00EC7002 /* Debug */,

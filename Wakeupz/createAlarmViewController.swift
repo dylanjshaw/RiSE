@@ -1,7 +1,9 @@
 import UIKit
 import CoreData
+import MapKit
+var oneLove:Bool = true
 
-class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
 
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -10,6 +12,9 @@ class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var isOn: UISwitch!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var createButtonAppearance: UIButton!
+    @IBOutlet weak var submitButtonAppearance: UIButton!
     
     
     var obligations: [Obligation] = []
@@ -22,7 +27,14 @@ class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPicke
         picker.delegate = self
         
         earliestWakeupTime.setValue(UIColor.white, forKeyPath: "textColor")
-        self.showAlert()
+
+        if oneLove {
+            self.showAlert()
+            oneLove = false
+        }
+        
+        createButtonAppearance.layer.cornerRadius = 8
+        submitButtonAppearance.layer.cornerRadius = 8
     }
     
     func getData() {
@@ -33,6 +45,8 @@ class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         do {
             obligations = try context.fetch(obligationFetch)
+            print("obligations fetched")
+            print(obligations)
         } catch {
             print("Fetching failed")
         }
@@ -77,11 +91,72 @@ class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         obligationSelection = row
     }
+
     
-    func calculateWakeup() {
+    let locationManager = CLLocationManager()
+    var userLocation = CLLocation()
+    
+    func calculateWakeup() -> Date {
+        return Date(timeIntervalSinceNow: 0)
+//        // get the selected obligation
+//        let ob = obligations[obligationSelection]
+//        
+//        // get some attributes and store them
+//        let addressTo = ob.address
+//        let timeArriveBy = ob.idealArrivalTime
+//        let timeTilReady = ob.avgReadyTime
+//        
+//        // check if locations services are on
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager.delegate = self
+//            // ask permission to use location services
+//            locationManager.requestAlwaysAuthorization()
+//        
+//            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//            locationManager.startUpdatingLocation()
+//        }
+//        
+//        let geocoder = CLGeocoder()
+//        geocoder.geocodeAddressString(addressTo!, completionHandler: {(placemarks: [CLPlacemark]?, error: Error?) -> Void in
+//            
+//            if placemarks != nil && placemarks!.count > 0 {
+//                let destinationPlacemark = MKPlacemark(placemark: (placemarks?[0])!)
+//                let request = MKDirectionsRequest()
+//                request.source = MKMapItem(placemark: MKPlacemark(
+//                    coordinate: CLLocationCoordinate2D(
+//                        latitude: self.userLocation.coordinate.latitude,
+//                        longitude: self.userLocation.coordinate.longitude
+//                ))
+//                )
+//                request.destination = MKMapItem(placemark: destinationPlacemark)
+//                request.transportType = .automobile
+//                
+//                let directions = MKDirections(request: request)
+//                
+//                directions.calculateETA(completionHandler: {(response: MKETAResponse?, error: Error?) -> Void in
+//                    
+//                    print("TIME TO TRAVEL \(response?.expectedTravelTime)")
+//                    
+//                    let calculated = timeArriveBy?.addingTimeInterval(((response?.expectedTravelTime)! + TimeInterval(timeTilReady) * 60) * -1) as! Date
+//                    print("THIS IS CALCULATED  \(calculated)")
+//                })
+//            }
+//        })
+//        return Date()
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        userLocation = locations[0] as! CLLocation
+        locationManager.stopUpdatingLocation()
+    }
+    
+    @IBAction func showMessage() {
+        let alertController = UIAlertController(title: "Easy there, cowboy!", message: "Make sure that you've entered a destination.", preferredStyle: .alert)
         
-        /* algorithm for calculating wake up time. function should return wake up time to
-         to be stored in Core data */
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     func setAlarmValues() {
@@ -89,22 +164,41 @@ class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         // let updatedWakeupTime = calculateWakeup()
         // remember to remove Date() from below
-        alarm.setValue(Date(), forKey: "calculatedWakeup")
+        alarm.setValue(calculateWakeup(), forKey: "calculatedWakeup")
         alarm.setValue(earliestWakeupTime.date, forKey: "earliestWakeup")
         alarm.setValue(true, forKey: "isSmart")
         
-        let obligationSelected = obligations[obligationSelection]
-        alarm.setValue(obligationSelected, forKey: "obligation")
-        alarm.setValue(Date(), forKey: "createdAt")
+        var obligationSelected = obligations[obligationSelection]
+        
+        func validateObligation() -> Bool {
+            if(obligationSelected.name == ""){
+                print(obligationSelected)
+                return false
+            } else {
+                print(obligationSelected)
+                return true
+            }
+        }
+        
+        if validateObligation(){
+            alarm.setValue(obligationSelected, forKey: "obligation")
+            alarm.setValue(Date(), forKey: "createdAt")
+        } else {
+            showMessage()
+        }
+        
     }
 
+        
     
     @IBAction func handleAddNewAlarm(_ sender: UIButton) {
         setAlarmValues()
         
         do {
             try context.save()
+            print("saved")
         } catch {
+            print("alarm did not save")
         }
     }
     
@@ -136,6 +230,8 @@ class createAlarmViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
         self.scrollView.setContentOffset(bottomOffset, animated: true)
     }
+    
+
     
     
     //TRY TO FIND A WAY TO CHECK PREVIOUS VIEW CONTROLLER

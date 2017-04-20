@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9jh-3h-clA">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,24 +18,31 @@
                         <viewControllerLayoutGuide type="bottom" id="CGi-hm-DqJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yc7-SP-zIf">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starryNight" translatesAutoresizingMaskIntoConstraints="NO" id="AWM-IB-U8i">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocr-uG-NW8">
-                                <rect key="frame" x="254.5" y="464" width="259" height="96"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RiSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAu-tt-f4V">
+                                <rect key="frame" x="116" y="285" width="142" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="80"/>
                                 <color key="textColor" red="0.83785455399999997" green="0.96301651180000003" blue="0.97065304490000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="0.047058823530000002" green="0.3803921569" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="W3P-j9-rHR">
+                                <rect key="frame" x="164" y="319" width="3" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="upArrow" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-fQ-tfa">
+                                <rect key="frame" x="158" y="299" width="15" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AWM-IB-U8i" secondAttribute="trailing" id="89Y-qb-vhJ"/>
-                            <constraint firstItem="Ocr-uG-NW8" firstAttribute="centerX" secondItem="Yc7-SP-zIf" secondAttribute="centerX" id="Xbk-Kc-l62"/>
-                            <constraint firstItem="Ocr-uG-NW8" firstAttribute="centerY" secondItem="Yc7-SP-zIf" secondAttribute="centerY" id="ag7-5C-0xB"/>
                             <constraint firstItem="AWM-IB-U8i" firstAttribute="top" secondItem="Yc7-SP-zIf" secondAttribute="top" id="dzL-m1-R4B"/>
                             <constraint firstItem="AWM-IB-U8i" firstAttribute="leading" secondItem="Yc7-SP-zIf" secondAttribute="leading" id="qIc-jq-KgO"/>
                             <constraint firstItem="CGi-hm-DqJ" firstAttribute="top" secondItem="AWM-IB-U8i" secondAttribute="bottom" id="zYQ-BC-2VZ"/>
@@ -48,6 +55,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blue" width="4" height="84"/>
         <image name="starryNight" width="320" height="568"/>
+        <image name="upArrow" width="256" height="256"/>
     </resources>
 </document>

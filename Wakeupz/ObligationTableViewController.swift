@@ -26,28 +26,6 @@ class ObligationTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return places.count
-    }
-
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! CustomRouteCell
-        
-        cell.locationName.text = places[indexPath.row]
-        cell.locationAddress.text = addresses[indexPath.row]
-
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            self.places.remove(at: indexPath.row)
-            self.tableView.reloadData()
-        }
-    
-    }
     
     func setObligationValues() {
         let obligation = NSEntityDescription.insertNewObject(forEntityName: "Obligation", into: self.context)
@@ -73,5 +51,4 @@ class ObligationTableViewController: UITableViewController {
             print("oopsies didn't work")
         }
     }
-
 }

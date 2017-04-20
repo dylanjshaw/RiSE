@@ -1,19 +1,14 @@
-//
-//  SelectTypeController.swift
-//  Wakeupz
-//
-//  Created by Dylan Shaw on 3/21/17.
-//  Copyright © 2017 F4. All rights reserved.
-//
-
 import Foundation
 import UIKit
-
+var oneMoreTime:Bool = true
 
 class SelectTypeController: UITableViewController {
 
     override func viewDidLoad() {
-        self.showAlert()
+        if oneMoreTime {
+            self.showAlert()
+            oneMoreTime = false
+        }
     }
     
     @IBAction func showAlert() {

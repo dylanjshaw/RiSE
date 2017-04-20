@@ -20,17 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let navigationBarAppearace = UINavigationBar.appearance()
-        
+//        let NSFontAttributeName:String
         // create blur effect
 //        navigationBarAppearace.isTranslucent = false
 
         // nav bar background color
-        navigationBarAppearace.barTintColor = UIColor(red: (51/255.0), green: (51/255.0), blue: (61/255.0), alpha: 1.0)
+        navigationBarAppearace.barTintColor = UIColor(red: (02/255.0), green: (00/255.0), blue: (03/255.0), alpha: 1.0)
+        
+        navigationBarAppearace.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Papyrus", size: 20)!]
+
+        
+        //GRAY COLOR BELOW
+        //UIColor(red: (51/255.0), green: (51/255.0), blue: (61/255.0), alpha: 1.0)
         
         // change navigation item title color
-        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: (12/255.0), green: (97/255.0), blue: (254/255.0), alpha: 1.0)
-]
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
+//        UIColor(red: (12/255.0), green: (97/255.0), blue: (254/255.0), alpha: 1.0)
         return true
     }
 

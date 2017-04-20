@@ -1,11 +1,3 @@
-//
-//  StandardAlarmController.swift
-//  Wakeupz
-//
-//  Created by Dylan Shaw on 3/21/17.
-//  Copyright © 2017 F4. All rights reserved.
-
-
 import Foundation
 import UIKit
 import CoreData
@@ -16,10 +8,12 @@ class StandardAlarmController: UIViewController {
     
     @IBOutlet weak var standardTime: UIDatePicker!
     
+    @IBOutlet weak var submitButtonAppearance: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         standardTime.setValue(UIColor.white, forKeyPath: "textColor")
+        submitButtonAppearance.layer.cornerRadius = 8
     }
     
     @IBAction func handleSetRegAlarm(_ sender: Any) {

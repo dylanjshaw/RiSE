@@ -1,5 +1,6 @@
 import UIKit
 import UserNotifications
+var justOnce:Bool = true
 
 
 class IndexTableViewController: UITableViewController {
@@ -11,27 +12,35 @@ class IndexTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         getData()
         self.tableView.reloadData()
-
-        // on load, request notifications from user 
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]){ (granted, error) in
-        }
         
+        // on load, request notifications from user
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(
+            options: [.alert, .sound, .badge],
+            completionHandler: { (granted,error) in
+                if justOnce {
+                    self.showAlert()
+                    justOnce = false
+                }
+        })
     }
     
+    
     override func viewDidLoad() {
-        self.showAlert()
         let navBar = view as? UINavigationBar
         navBar?.tintColor = UIColor.darkGray
+        tableView.allowsSelection = false
         
-        
+//        var faicon = [String: UniChar]()
+//        faicon["faglass"] = 0xf000
+//        
+//        let label = UILabel(frame: CGRect(x: 0, y: CGFloat(60), width: 120, height: 40))
+//        label.font = UIFont(name: "FontAwesome", size:40)
+//        label.text = String(format: "%C", faicon["faglass"]!)
+//        self.view.addSubview(label)
     }
     
     func getData() {
-//        let alarmFetch: NSFetchRequest<Alarm> = Alarm.fetchRequest()
-//        let alarmSort = NSSortDescriptor(key: "createdAt", ascending: true)
-//        alarmFetch.sortDescriptors = [alarmSort]
-        
         do {
             alarms = try context.fetch(Alarm.fetchRequest())
             print("That is sooo fetch")
@@ -54,7 +63,6 @@ class IndexTableViewController: UITableViewController {
             cell.placeLabel.text = alarms[indexPath.row].obligation?.name
         } else {
             cell.placeLabel.text = ""
-            cell.backgroundColor = UIColor(red: (97/255.0), green: (87/255.0), blue: (108/255.0), alpha: 1.0)
         }
         
         let dateFormatter = DateFormatter()
@@ -80,7 +88,7 @@ class IndexTableViewController: UITableViewController {
             context.delete(alarms[indexPath.row])
             do {
                 try context.save()
-                viewWillAppear(false)
+                viewWillAppear(false) 
             } catch {
                 print("oops didn't save")
             }
@@ -103,8 +111,5 @@ class IndexTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
         
     }
-    
-    
-
     
 }

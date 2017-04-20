@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CreateObligationViewController: UIViewController {
+class CreateObligationViewController: UIViewController, UITextFieldDelegate {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -17,7 +17,7 @@ class CreateObligationViewController: UIViewController {
     @IBOutlet weak var newAddress: UITextField!
     @IBOutlet weak var newDatePicker: UIDatePicker!
     @IBOutlet weak var avgReadyDuration: UITextField!
-    
+    @IBOutlet weak var addButtonAppearance: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +25,14 @@ class CreateObligationViewController: UIViewController {
         // Do any additional setup after loading the view.
         newDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
      //   avgReadyDuration.setValue(UIColor.white, forKeyPath: "textColor")
+        addButtonAppearance.layer.cornerRadius = 8
+        self.newObligationName.delegate = self;
+        self.newAddress.delegate = self;
+        self.hideKeyboard()
     }
     
     func validateName() -> Bool {
-        if newObligationName.text == "" {
+        if (newObligationName.text == "") {
             print("new obligation name fail")
             return false
         } else {
@@ -38,7 +42,6 @@ class CreateObligationViewController: UIViewController {
     
     func validateAddress() -> Bool {
         if newAddress.text == "" {
-            // pop up here
             print("new obligation address fail")
             return false
         } else {
@@ -46,13 +49,23 @@ class CreateObligationViewController: UIViewController {
         }
     }
     
-    func validateCharacterLength() -> Bool {
-        if (avgReadyDuration.text?.characters.count)! > 12 {
-            return false
-        } else {
-            return true
-        }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
+    
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+//    func validateCharacterLength() -> Bool {
+//        if (avgReadyDuration.text?.characters.count)! > 12 {
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,15 +75,16 @@ class CreateObligationViewController: UIViewController {
     func setObligationValues() -> Bool {
         let obligation = NSEntityDescription.insertNewObject(forEntityName: "Obligation", into: self.context)
         
-        if validateName() && validateAddress() && validateCharacterLength() {
+        if validateName() && validateAddress() {
             obligation.setValue(newObligationName.text, forKey: "name")
             obligation.setValue(newAddress.text, forKey: "address")
             // set estimatedDrivingDuration value here
             
             let avgReadyDurationInt = Int(avgReadyDuration.text!)
-            obligation.setValue(avgReadyDurationInt, forKey: "avgReadyTime")
+            obligation.setValue(avgReadyDurationInt!, forKey: "avgReadyTime")
             obligation.setValue(newDatePicker.date, forKey: "idealArrivalTime")
             obligation.setValue(Date(), forKey: "createdAt")
+            
             return true
         } else {
             showAlert()
@@ -125,10 +139,21 @@ class CreateObligationViewController: UIViewController {
         scrollDown()
     }
     
-    
-    
+}
 
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
     
-    
-    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 }
